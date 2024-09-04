@@ -21,8 +21,12 @@ public class SocketTextHandler extends TextWebSocketHandler {
         logQueryParams(session);
 
         String payload = message.getPayload();
+
+        // Convert payload to Json
         JSONObject jsonObject = new JSONObject(payload);
-        session.sendMessage(new TextMessage("Hi " + jsonObject.get("user") + " how may we help you?"));
+
+        TextMessage textMessage = new TextMessage("Hi " + jsonObject.get("user") + " how may we help you?");
+        session.sendMessage(textMessage);
     }
 
     // See https://msmechatronics.medium.com/websocket-wizardry-spring-webflux-edition-ca9d30346465

@@ -17,7 +17,8 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        // http://localhost:8080/index.html
+        // Go to http://localhost:8080/index.html
+        // The client side connects to "ws://localhost:8080/user"
         registry.addHandler(socketTextHandler, "/user");
     }
 }
