@@ -18,3 +18,5 @@ socket.onopen = function() {
     socket.send("Hello Server!");
 };
 ```
+
+Also see per-message Deflate compression, a widely supported WebSocket extension.
